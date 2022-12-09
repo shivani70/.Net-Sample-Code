@@ -1,0 +1,37 @@
+﻿@model OMTModel.LoginOMT
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card card-header">
+                    <h1 class="text-center text-primary">Login</h1>
+                </div>
+                <div class="card-body">
+                    <form method="Post" asp-action="Login">
+                        <p class="text-center text-danger">@TempData["error"]</p>
+                        <p class="text-center text-success">@TempData["message"]</p>
+                        <div class="form-group">
+                           <label asp-for="Email"></label>
+                           <input type="text" asp-for="Email" class="form-control" placeholder="Enter Email"/>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input type="text" asp-for="Password" class="form-control"
+                            placeholder="Enter Password"/>
+                        </div>
+                        <div class="form-group">
+                            @Html.ActionLink("Forgot Password", "ConfirmEmail", "Login",null, new { @Class = "" })
+                        </div>                
+                        <div class="form-group">
+                            <input type="submit" value="submit" class="btn btn-sm btn-outline-success floatright"/>
+                        </div>
+                        </form>
+                        </div>
+                     </div>
+             </div>  
+            </div>
+         </div>
+                        

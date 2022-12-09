@@ -1,0 +1,28 @@
+﻿@model OMTModel.confirmEmailOMT
+@{
+     ViewData["Title"] = "CONFIRM PAGE";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card card-header">
+                    <h1 class="text-center text-primary">Login</h1>
+                </div>
+                <div class="card-body">
+                    <form method="Post" asp-action="ConfirmEmail">
+                        <p class="text-center text-danger">@TempData["error"]</p>
+                        <p class="text-center text-success">@TempData["message"]</p>
+                        <div class="form-group">
+                           <label asp-for="Email"></label>
+                           <input type="text" asp-for="Email" class="form-control" placeholder="Confirm Email"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-sm" value="submit" />
+                        </div>
+                 </form>
+            </div>
+         </div>
+       </div>
+     </div>
+    </div>
